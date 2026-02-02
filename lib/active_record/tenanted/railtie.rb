@@ -95,7 +95,6 @@ module ActiveRecord
 
       initializer "active_record_tenanted.monkey_patches" do
         ActiveSupport.on_load(:active_record) do
-          prepend ActiveRecord::Tenanted::Patches::Attributes
           ActiveRecord::Tasks::DatabaseTasks.prepend ActiveRecord::Tenanted::Patches::DatabaseTasks
         end
       end
